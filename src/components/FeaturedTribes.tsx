@@ -31,25 +31,25 @@ const tribes = [
 
 export const FeaturedTribes = () => {
   return (
-    <section className="py-20 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-secondary/5" />
+    <section className="py-32 relative">
+      <div className="absolute inset-0 bg-gradient-to-b from-purple-500/5 to-pink-500/5" />
       <div className="container mx-auto px-4 relative">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
-          <h2 className="font-heading text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
+          <h2 className="font-heading text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400">
             Popular Tribes
           </h2>
-          <p className="text-foreground/70 max-w-2xl mx-auto">
+          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
             Join these thriving communities of students sharing similar interests and goals
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {tribes.map((tribe, index) => (
             <motion.div
               key={tribe.title}
@@ -58,16 +58,16 @@ export const FeaturedTribes = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Card className="group hover:shadow-lg transition-all duration-300 backdrop-blur-md bg-white/10 border-white/20">
+              <Card className="group hover:scale-105 transition-all duration-300 backdrop-blur-md bg-white/5 border-white/10 overflow-hidden">
                 <CardHeader>
-                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center mb-4 group-hover:from-primary/30 group-hover:to-secondary/30 transition-colors">
-                    <tribe.icon className="w-6 h-6 text-primary" />
+                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center mb-4 group-hover:from-purple-500/30 group-hover:to-pink-500/30 transition-colors">
+                    <tribe.icon className="w-7 h-7 text-purple-400" />
                   </div>
-                  <CardTitle className="text-foreground">{tribe.title}</CardTitle>
-                  <CardDescription className="text-foreground/70">{tribe.description}</CardDescription>
+                  <CardTitle className="text-white text-2xl">{tribe.title}</CardTitle>
+                  <CardDescription className="text-gray-400">{tribe.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-foreground/60">
+                  <p className="text-sm text-gray-500">
                     {tribe.members.toLocaleString()} members
                   </p>
                 </CardContent>
