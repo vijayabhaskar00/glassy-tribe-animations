@@ -2,6 +2,9 @@ import { HeroSection } from "@/components/HeroSection";
 import { FeaturedTribes } from "@/components/FeaturedTribes";
 import { Testimonials } from "@/components/Testimonials";
 import { Statistics } from "@/components/Statistics";
+import { EventsSection } from "@/components/EventsSection";
+import { MentorsSection } from "@/components/MentorsSection";
+import { InternshipsSection } from "@/components/InternshipsSection";
 
 const Index = () => {
   return (
@@ -11,6 +14,9 @@ const Index = () => {
       <HeroSection />
       <FeaturedTribes />
       <Statistics />
+      <EventsSection />
+      <MentorsSection />
+      <InternshipsSection />
       <Testimonials />
     </div>
   );
