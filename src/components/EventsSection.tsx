@@ -1,28 +1,28 @@
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Calendar, MapPin, Clock } from "lucide-react";
+import { Calendar, Clock, MapPin } from "lucide-react";
 
 const events = [
   {
     title: "Tech Career Fair 2024",
     date: "March 15, 2024",
+    time: "10:00 AM - 4:00 PM",
     location: "Virtual Event",
-    time: "2:00 PM - 6:00 PM",
     description: "Connect with top tech companies and explore internship opportunities.",
   },
   {
-    title: "Design Workshop",
-    date: "March 20, 2024",
-    location: "Student Center",
-    time: "3:00 PM - 5:00 PM",
-    description: "Learn UI/UX design principles from industry experts.",
+    title: "Study Group: Machine Learning",
+    date: "March 18, 2024",
+    time: "2:00 PM - 4:00 PM",
+    location: "Online",
+    description: "Join fellow students to discuss and practice machine learning concepts.",
   },
   {
-    title: "Coding Bootcamp",
-    date: "March 25, 2024",
-    location: "Innovation Lab",
-    time: "10:00 AM - 4:00 PM",
-    description: "Intensive coding workshop for beginners and intermediates.",
+    title: "Creative Writing Workshop",
+    date: "March 20, 2024",
+    time: "3:00 PM - 5:00 PM",
+    location: "Virtual Workshop",
+    description: "Enhance your writing skills with professional guidance.",
   },
 ];
 
@@ -42,11 +42,11 @@ export const EventsSection = () => {
             Upcoming Events
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-            Join our exciting events and expand your knowledge
+            Join our exciting events and expand your horizons
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {events.map((event, index) => (
             <motion.div
               key={event.title}
@@ -57,24 +57,22 @@ export const EventsSection = () => {
             >
               <Card className="h-full backdrop-blur-md bg-white/5 border-white/10 hover:scale-105 transition-all duration-300">
                 <CardHeader>
-                  <CardTitle className="text-white text-2xl mb-4">{event.title}</CardTitle>
-                  <div className="space-y-2 text-gray-400">
-                    <div className="flex items-center gap-2">
-                      <Calendar className="w-4 h-4 text-orange-400" />
-                      <span>{event.date}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <MapPin className="w-4 h-4 text-purple-400" />
-                      <span>{event.location}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Clock className="w-4 h-4 text-pink-400" />
-                      <span>{event.time}</span>
-                    </div>
-                  </div>
+                  <CardTitle className="text-2xl text-white mb-4">{event.title}</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-gray-300">{event.description}</p>
+                <CardContent className="space-y-4">
+                  <div className="flex items-center text-gray-300">
+                    <Calendar className="w-5 h-5 mr-2 text-purple-400" />
+                    <span>{event.date}</span>
+                  </div>
+                  <div className="flex items-center text-gray-300">
+                    <Clock className="w-5 h-5 mr-2 text-purple-400" />
+                    <span>{event.time}</span>
+                  </div>
+                  <div className="flex items-center text-gray-300">
+                    <MapPin className="w-5 h-5 mr-2 text-purple-400" />
+                    <span>{event.location}</span>
+                  </div>
+                  <p className="text-gray-400 mt-4">{event.description}</p>
                 </CardContent>
               </Card>
             </motion.div>
