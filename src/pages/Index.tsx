@@ -17,14 +17,30 @@ const Index = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-pink-500/10 to-orange-500/10" />
       <Header />
       <HeroSection />
-      <CommunitySection />
-      <EventsSection />
-      <St33Section />
-      <OpportunitiesSection />
-      <Statistics />
-      <AppShowcase />
-      <CollaborativeSpace />
-      <ContactForm />
+      <div id="community">
+        <CommunitySection />
+      </div>
+      <div id="events">
+        <EventsSection />
+      </div>
+      <div id="st33">
+        <St33Section />
+      </div>
+      <div id="opportunities">
+        <OpportunitiesSection />
+      </div>
+      <div id="stats">
+        <Statistics />
+      </div>
+      <div id="showcase">
+        <AppShowcase />
+      </div>
+      <div id="collaborative">
+        <CollaborativeSpace />
+      </div>
+      <div id="contact">
+        <ContactForm />
+      </div>
       <Footer />
     </div>
   );
