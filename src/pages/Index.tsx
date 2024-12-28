@@ -1,12 +1,14 @@
 import { HeroSection } from "@/components/HeroSection";
-import { FeaturedTribes } from "@/components/FeaturedTribes";
-import { Statistics } from "@/components/Statistics";
+import { CommunitySection } from "@/components/CommunitySection";
 import { EventsSection } from "@/components/EventsSection";
-import { MentorsSection } from "@/components/MentorsSection";
-import { InternshipsSection } from "@/components/InternshipsSection";
-import { Testimonials } from "@/components/Testimonials";
-import { Footer } from "@/components/Footer";
+import { St33Section } from "@/components/St33Section";
+import { OpportunitiesSection } from "@/components/OpportunitiesSection";
+import { Statistics } from "@/components/Statistics";
+import { AppShowcase } from "@/components/AppShowcase";
+import { CollaborativeSpace } from "@/components/CollaborativeSpace";
+import { ContactForm } from "@/components/ContactForm";
 import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 
 const Index = () => {
   return (
@@ -15,12 +17,14 @@ const Index = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-pink-500/10 to-orange-500/10" />
       <Header />
       <HeroSection />
-      <FeaturedTribes />
-      <Statistics />
+      <CommunitySection />
       <EventsSection />
-      <MentorsSection />
-      <InternshipsSection />
-      <Testimonials />
+      <St33Section />
+      <OpportunitiesSection />
+      <Statistics />
+      <AppShowcase />
+      <CollaborativeSpace />
+      <ContactForm />
       <Footer />
     </div>
   );
