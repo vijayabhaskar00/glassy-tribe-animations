@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { UserGroup } from "lucide-react";
+import { Users } from "lucide-react";
 
 export const Header = () => {
   return (
@@ -8,7 +8,7 @@ export const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 text-white">
-            <UserGroup className="w-8 h-8 text-purple-400" />
+            <Users className="w-8 h-8 text-purple-400" />
             <span className="font-heading text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400">
               Student Tribe
             </span>
