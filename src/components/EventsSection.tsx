@@ -31,7 +31,7 @@ export const EventsSection = () => {
           className="text-center mb-16"
         >
           <h2 className="font-heading text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-ocean-400 to-blue-400">
-            Upcoming Events
+            Most happening Events
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto text-lg">
             Join our exciting events and expand your knowledge
