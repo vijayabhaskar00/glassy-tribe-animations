@@ -9,37 +9,57 @@ import { CollaborativeSpace } from "@/components/CollaborativeSpace";
 import { ContactForm } from "@/components/ContactForm";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { lazy, Suspense } from 'react';
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-[#0F0F0F] text-white overflow-hidden pt-16">
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1519389950473-47ba0277781c')] bg-cover bg-center bg-fixed opacity-5" />
+      <div 
+        className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1519389950473-47ba0277781c')] bg-cover bg-center bg-fixed opacity-5"
+        loading="lazy"
+      />
       <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-pink-500/10 to-orange-500/10" />
       <Header />
       <HeroSection />
       <div id="community">
-        <CommunitySection />
+        <Suspense fallback={<div>Loading...</div>}>
+          <CommunitySection />
+        </Suspense>
       </div>
       <div id="events">
-        <EventsSection />
+        <Suspense fallback={<div>Loading...</div>}>
+          <EventsSection />
+        </Suspense>
       </div>
       <div id="st33">
-        <St33Section />
+        <Suspense fallback={<div>Loading...</div>}>
+          <St33Section />
+        </Suspense>
       </div>
       <div id="opportunities">
-        <OpportunitiesSection />
+        <Suspense fallback={<div>Loading...</div>}>
+          <OpportunitiesSection />
+        </Suspense>
       </div>
       <div id="stats">
-        <Statistics />
+        <Suspense fallback={<div>Loading...</div>}>
+          <Statistics />
+        </Suspense>
       </div>
       <div id="showcase">
-        <AppShowcase />
+        <Suspense fallback={<div>Loading...</div>}>
+          <AppShowcase />
+        </Suspense>
       </div>
       <div id="collaborative">
-        <CollaborativeSpace />
+        <Suspense fallback={<div>Loading...</div>}>
+          <CollaborativeSpace />
+        </Suspense>
       </div>
       <div id="contact">
-        <ContactForm />
+        <Suspense fallback={<div>Loading...</div>}>
+          <ContactForm />
+        </Suspense>
       </div>
       <Footer />
     </div>

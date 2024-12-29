@@ -51,7 +51,7 @@ export const AppShowcase = () => {
                   transition={{ delay: index * 0.1 }}
                   className="backdrop-blur-md bg-white/5 border border-white/10 rounded-xl p-6"
                 >
-                  <feature.icon className="w-8 h-8 mb-4 text-indigo-400" />
+                  <feature.icon className="w-6 h-6 mb-4 text-indigo-400" />
                   <h3 className="text-xl font-bold mb-2 text-white">{feature.title}</h3>
                   <p className="text-gray-400">{feature.description}</p>
                 </motion.div>
@@ -70,6 +70,9 @@ export const AppShowcase = () => {
                 src="https://images.unsplash.com/photo-1498050108023-c5249f4df085"
                 alt="App Interface"
                 className="relative rounded-3xl shadow-2xl border border-white/10"
+                loading="lazy"
+                width="300"
+                height="600"
               />
             </div>
           </motion.div>
