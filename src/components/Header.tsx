@@ -48,24 +48,6 @@ export const Header = () => {
               Opportunities
             </button>
             <button 
-              onClick={() => scrollToSection('stats')} 
-              className="text-gray-300 hover:text-white transition-colors"
-            >
-              Numbers
-            </button>
-            <button 
-              onClick={() => scrollToSection('showcase')} 
-              className="text-gray-300 hover:text-white transition-colors"
-            >
-              App
-            </button>
-            <button 
-              onClick={() => scrollToSection('collaborative')} 
-              className="text-gray-300 hover:text-white transition-colors"
-            >
-              Collaborate
-            </button>
-            <button 
               onClick={() => scrollToSection('contact')} 
               className="text-gray-300 hover:text-white transition-colors"
             >
