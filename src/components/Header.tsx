@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Users, Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useState, lazy, Suspense } from "react";
 import { Button } from "./ui/button";
 
 export const Header = () => {
@@ -15,7 +15,7 @@ export const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-brand-dark/95 backdrop-blur-xl">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/60 backdrop-blur-xl backdrop-saturate-150 border-b border-white/10 supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -73,7 +73,7 @@ export const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden absolute top-16 left-0 right-0 bg-brand-dark/95 backdrop-blur-xl border-b border-white/10">
+          <div className="md:hidden absolute top-16 left-0 right-0 bg-background/80 backdrop-blur-xl backdrop-saturate-150 border-b border-white/10">
             <nav className="container mx-auto px-4 py-4 flex flex-col space-y-4">
               <button 
                 onClick={() => scrollToSection('community')} 

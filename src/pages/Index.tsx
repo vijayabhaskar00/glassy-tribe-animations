@@ -1,20 +1,22 @@
-import { HeroSection } from "@/components/HeroSection";
-import { CommunitySection } from "@/components/CommunitySection";
-import { EventsSection } from "@/components/EventsSection";
-import { St33Section } from "@/components/St33Section";
-import { OpportunitiesSection } from "@/components/OpportunitiesSection";
-import { Statistics } from "@/components/Statistics";
-import { AppShowcase } from "@/components/AppShowcase";
-import { CollaborativeSpace } from "@/components/CollaborativeSpace";
-import { ContactForm } from "@/components/ContactForm";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { lazy, Suspense } from 'react';
+import { Header } from "@/components/Header";
+import { HeroSection } from "@/components/HeroSection";
+
+// Lazy load components that are not immediately visible
+const CommunitySection = lazy(() => import("@/components/CommunitySection"));
+const EventsSection = lazy(() => import("@/components/EventsSection"));
+const St33Section = lazy(() => import("@/components/St33Section"));
+const OpportunitiesSection = lazy(() => import("@/components/OpportunitiesSection"));
+const Statistics = lazy(() => import("@/components/Statistics"));
+const AppShowcase = lazy(() => import("@/components/AppShowcase"));
+const CollaborativeSpace = lazy(() => import("@/components/CollaborativeSpace"));
+const ContactForm = lazy(() => import("@/components/ContactForm"));
+const Footer = lazy(() => import("@/components/Footer"));
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-[#0F0F0F] text-white overflow-hidden pt-16 relative">
-      {/* Main background image */}
+      {/* Main background image with loading optimization */}
       <div 
         className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1519389950473-47ba0277781c')] bg-cover bg-center bg-fixed opacity-5"
         aria-hidden="true"
@@ -34,47 +36,35 @@ const Index = () => {
 
       <Header />
       <HeroSection />
-      <div id="community">
-        <Suspense fallback={<div>Loading...</div>}>
+      
+      {/* Lazy loaded sections with loading fallback */}
+      <Suspense fallback={<div className="h-96 flex items-center justify-center">Loading...</div>}>
+        <div id="community">
           <CommunitySection />
-        </Suspense>
-      </div>
-      <div id="events">
-        <Suspense fallback={<div>Loading...</div>}>
+        </div>
+        <div id="events">
           <EventsSection />
-        </Suspense>
-      </div>
-      <div id="st33">
-        <Suspense fallback={<div>Loading...</div>}>
+        </div>
+        <div id="st33">
           <St33Section />
-        </Suspense>
-      </div>
-      <div id="opportunities">
-        <Suspense fallback={<div>Loading...</div>}>
+        </div>
+        <div id="opportunities">
           <OpportunitiesSection />
-        </Suspense>
-      </div>
-      <div id="stats">
-        <Suspense fallback={<div>Loading...</div>}>
+        </div>
+        <div id="stats">
           <Statistics />
-        </Suspense>
-      </div>
-      <div id="showcase">
-        <Suspense fallback={<div>Loading...</div>}>
+        </div>
+        <div id="showcase">
           <AppShowcase />
-        </Suspense>
-      </div>
-      <div id="collaborative">
-        <Suspense fallback={<div>Loading...</div>}>
+        </div>
+        <div id="collaborative">
           <CollaborativeSpace />
-        </Suspense>
-      </div>
-      <div id="contact">
-        <Suspense fallback={<div>Loading...</div>}>
+        </div>
+        <div id="contact">
           <ContactForm />
-        </Suspense>
-      </div>
-      <Footer />
+        </div>
+        <Footer />
+      </Suspense>
     </div>
   );
 };
