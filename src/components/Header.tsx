@@ -1,12 +1,17 @@
 import { Link } from "react-router-dom";
-import { Users } from "lucide-react";
+import { Users, Menu, X } from "lucide-react";
+import { useState } from "react";
+import { Button } from "./ui/button";
 
 export const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+    setIsMenuOpen(false);
   };
 
   return (
@@ -21,7 +26,7 @@ export const Header = () => {
             </span>
           </Link>
 
-          {/* Navigation */}
+          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <button 
               onClick={() => scrollToSection('community')} 
@@ -54,7 +59,55 @@ export const Header = () => {
               Contact
             </button>
           </nav>
+
+          {/* Mobile Menu Button */}
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden text-white"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </Button>
         </div>
+
+        {/* Mobile Navigation */}
+        {isMenuOpen && (
+          <div className="md:hidden absolute top-16 left-0 right-0 bg-brand-dark/95 backdrop-blur-xl border-b border-white/10">
+            <nav className="container mx-auto px-4 py-4 flex flex-col space-y-4">
+              <button 
+                onClick={() => scrollToSection('community')} 
+                className="text-white/80 hover:text-white transition-colors text-left py-2"
+              >
+                Community
+              </button>
+              <button 
+                onClick={() => scrollToSection('events')} 
+                className="text-white/80 hover:text-white transition-colors text-left py-2"
+              >
+                Events
+              </button>
+              <button 
+                onClick={() => scrollToSection('st33')} 
+                className="text-white/80 hover:text-white transition-colors text-left py-2"
+              >
+                ST33
+              </button>
+              <button 
+                onClick={() => scrollToSection('opportunities')} 
+                className="text-white/80 hover:text-white transition-colors text-left py-2"
+              >
+                Opportunities
+              </button>
+              <button 
+                onClick={() => scrollToSection('contact')} 
+                className="text-white/80 hover:text-white transition-colors text-left py-2"
+              >
+                Contact
+              </button>
+            </nav>
+          </div>
+        )}
       </div>
     </header>
   );
