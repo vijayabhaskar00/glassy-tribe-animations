@@ -9,7 +9,7 @@ const St33Section = lazy(() => import("@/components/St33Section").then(module =>
 const OpportunitiesSection = lazy(() => import("@/components/OpportunitiesSection").then(module => ({ default: module.OpportunitiesSection })));
 const Statistics = lazy(() => import("@/components/Statistics").then(module => ({ default: module.Statistics })));
 const AppShowcase = lazy(() => import("@/components/AppShowcase").then(module => ({ default: module.AppShowcase })));
-const CollaborativeSpace = lazy(() => import("@/components/CollaborativeSpace"));
+const CollaborativeSpace = lazy(() => import("@/components/CollaborativeSpace").then(module => ({ default: module.CollaborativeSpace })));
 const ContactForm = lazy(() => import("@/components/ContactForm").then(module => ({ default: module.ContactForm })));
 const Footer = lazy(() => import("@/components/Footer").then(module => ({ default: module.Footer })));
 

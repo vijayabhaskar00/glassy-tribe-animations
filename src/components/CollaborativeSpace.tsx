@@ -67,3 +67,5 @@ export const CollaborativeSpace = () => {
     </section>
   );
 };
+
+export default CollaborativeSpace;
