@@ -81,3 +81,5 @@ export const AppShowcase = () => {
     </section>
   );
 };
+
+export default AppShowcase;

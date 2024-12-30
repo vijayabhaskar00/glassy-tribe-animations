@@ -3,15 +3,15 @@ import { Header } from "@/components/Header";
 import { HeroSection } from "@/components/HeroSection";
 
 // Lazy load components that are not immediately visible
-const CommunitySection = lazy(() => import("@/components/CommunitySection"));
-const EventsSection = lazy(() => import("@/components/EventsSection"));
-const St33Section = lazy(() => import("@/components/St33Section"));
-const OpportunitiesSection = lazy(() => import("@/components/OpportunitiesSection"));
-const Statistics = lazy(() => import("@/components/Statistics"));
-const AppShowcase = lazy(() => import("@/components/AppShowcase"));
+const CommunitySection = lazy(() => import("@/components/CommunitySection").then(module => ({ default: module.CommunitySection })));
+const EventsSection = lazy(() => import("@/components/EventsSection").then(module => ({ default: module.EventsSection })));
+const St33Section = lazy(() => import("@/components/St33Section").then(module => ({ default: module.St33Section })));
+const OpportunitiesSection = lazy(() => import("@/components/OpportunitiesSection").then(module => ({ default: module.OpportunitiesSection })));
+const Statistics = lazy(() => import("@/components/Statistics").then(module => ({ default: module.Statistics })));
+const AppShowcase = lazy(() => import("@/components/AppShowcase").then(module => ({ default: module.AppShowcase })));
 const CollaborativeSpace = lazy(() => import("@/components/CollaborativeSpace"));
-const ContactForm = lazy(() => import("@/components/ContactForm"));
-const Footer = lazy(() => import("@/components/Footer"));
+const ContactForm = lazy(() => import("@/components/ContactForm").then(module => ({ default: module.ContactForm })));
+const Footer = lazy(() => import("@/components/Footer").then(module => ({ default: module.Footer })));
 
 const Index = () => {
   return (

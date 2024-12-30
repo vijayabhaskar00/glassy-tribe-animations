@@ -62,3 +62,5 @@ export const CommunitySection = () => {
     </section>
   );
 };
+
+export default CommunitySection;

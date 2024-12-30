@@ -74,3 +74,5 @@ export const EventsSection = () => {
     </section>
   );
 };
+
+export default EventsSection;

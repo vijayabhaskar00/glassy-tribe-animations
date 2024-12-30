@@ -67,3 +67,5 @@ export const St33Section = () => {
     </section>
   );
 };
+
+export default St33Section;

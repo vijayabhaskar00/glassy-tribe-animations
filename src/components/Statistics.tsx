@@ -72,3 +72,5 @@ export const Statistics = () => {
     </section>
   );
 };
+
+export default Statistics;
