@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Calendar, MapPin, Clock } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 const events = [
   {
@@ -22,7 +23,6 @@ const events = [
 export const EventsSection = () => {
   return (
     <section className="py-32 relative overflow-hidden">
-      <div className="absolute inset-0 bg-ocean-500/5" />
       <div className="container mx-auto px-4 relative">
         <motion.div
           initial={{ opacity: 0 }}
@@ -33,9 +33,15 @@ export const EventsSection = () => {
           <h2 className="font-heading text-5xl font-bold mb-4 text-white">
             Most happening Events
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+          <p className="text-gray-400 max-w-2xl mx-auto text-lg mb-8">
             Join our exciting events and expand your knowledge
           </p>
+          <Button 
+            size="lg" 
+            className="bg-primary hover:bg-primary/90 text-white font-semibold"
+          >
+            View All Events
+          </Button>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -52,15 +58,15 @@ export const EventsSection = () => {
                   <h3 className="text-2xl font-heading font-semibold text-white mb-4">{event.title}</h3>
                   <div className="space-y-3 text-gray-300">
                     <div className="flex items-center">
-                      <Calendar className="w-5 h-5 mr-3 text-ocean-400" />
+                      <Calendar className="w-5 h-5 mr-3 text-primary" />
                       <span>{event.date}</span>
                     </div>
                     <div className="flex items-center">
-                      <Clock className="w-5 h-5 mr-3 text-ocean-400" />
+                      <Clock className="w-5 h-5 mr-3 text-primary" />
                       <span>{event.time}</span>
                     </div>
                     <div className="flex items-center">
-                      <MapPin className="w-5 h-5 mr-3 text-ocean-400" />
+                      <MapPin className="w-5 h-5 mr-3 text-primary" />
                       <span>{event.location}</span>
                     </div>
                   </div>
