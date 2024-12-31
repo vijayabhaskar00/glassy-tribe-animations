@@ -6,32 +6,23 @@
   :root {
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
-
     --card: 240 10% 3.9%;
     --card-foreground: 0 0% 98%;
-
     --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
-
     --primary: 0 0% 98%;
     --primary-foreground: 240 5.9% 10%;
-
     --secondary: 240 3.7% 15.9%;
     --secondary-foreground: 0 0% 98%;
-
     --muted: 240 3.7% 15.9%;
     --muted-foreground: 240 5% 64.9%;
-
     --accent: 240 3.7% 15.9%;
     --accent-foreground: 0 0% 98%;
-
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
     --ring: 240 4.9% 83.9%;
-
     --radius: 0.5rem;
   }
 }
@@ -66,4 +57,18 @@
 
 .hover-gradient {
   @apply hover:bg-gradient-to-r hover:from-purple-500 hover:via-pink-500 hover:to-orange-500 transition-all duration-300;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient {
+  animation: gradient 6s linear infinite;
+}
+
+.bg-300\% {
+  background-size: 300% 300%;
 }
