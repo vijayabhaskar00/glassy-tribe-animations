@@ -10,6 +10,31 @@ export const HeroSection = () => {
         <div className="absolute inset-0 bg-[#0A0F1E]" />
         <div className="absolute inset-0 bg-gradient-to-br from-purple-500/30 via-pink-500/20 to-orange-500/10 animate-gradient bg-300%" />
         <div className="absolute inset-0 bg-[url('https://assets.website-files.com/6502af467b2a8c4ee8159a5b/6502af467b2a8c4ee8159a81_noise.png')] opacity-30 mix-blend-soft-light" />
+        
+        {/* Student-centric imagery overlay */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-0 right-0 w-1/2 h-1/2">
+            <img 
+              src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d" 
+              alt="Student with MacBook"
+              className="object-cover w-full h-full"
+            />
+          </div>
+          <div className="absolute bottom-0 left-0 w-1/2 h-1/2">
+            <img 
+              src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158" 
+              alt="Student studying"
+              className="object-cover w-full h-full"
+            />
+          </div>
+          <div className="absolute top-1/4 left-1/4 w-1/2 h-1/2">
+            <img 
+              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" 
+              alt="Coding screen"
+              className="object-cover w-full h-full opacity-40"
+            />
+          </div>
+        </div>
       </div>
       
       {/* Enhanced floating elements */}
@@ -65,7 +90,7 @@ export const HeroSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.5 }}
-            className="text-lg sm:text-xl md:text-2xl text-[#B4B9C5] mb-12 glass-effect p-8 rounded-2xl max-w-3xl mx-auto shadow-xl"
+            className="text-lg sm:text-xl md:text-2xl text-[#B4B9C5] mb-12 glass-effect p-8 rounded-2xl max-w-3xl mx-auto shadow-xl backdrop-blur-lg"
           >
             Join the next generation of learners in our vibrant digital campus. Connect, collaborate, and grow together.
           </motion.p>
