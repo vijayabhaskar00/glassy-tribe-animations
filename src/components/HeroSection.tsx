@@ -5,8 +5,23 @@ import { Button } from "@/components/ui/button";
 export const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-20 px-4">
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 via-pink-600/20 to-orange-600/20" />
-      <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
+      {/* Dynamic background with gradient overlay */}
+      <div className="absolute inset-0">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover"
+          poster="https://cdn.dribbble.com/users/1162077/screenshots/4382010/animated-pattern.gif"
+        >
+          <source
+            src="https://cdn.dribbble.com/users/1162077/screenshots/4382010/animated-pattern.gif"
+            type="video/mp4"
+          />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/90 via-background/95 to-background/98" />
+      </div>
       
       <div className="container mx-auto relative z-10">
         <motion.div
