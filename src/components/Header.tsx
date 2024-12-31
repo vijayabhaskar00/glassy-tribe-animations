@@ -15,12 +15,12 @@ export const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/30 backdrop-blur-xl border-b border-white/10">
+    <header className="fixed top-0 left-0 right-0 z-50 glass-effect">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center space-x-2">
-            <Users className="w-8 h-8 text-white" />
-            <span className="font-heading text-xl font-bold text-white">
+        <div className="flex items-center justify-between h-20">
+          <Link to="/" className="flex items-center space-x-2 group">
+            <Users className="w-8 h-8 text-[#9b87f5] group-hover:text-[#D6BCFA] transition-colors" />
+            <span className="font-heading text-xl font-bold gradient-text">
               Student Tribe
             </span>
           </Link>
@@ -30,9 +30,10 @@ export const Header = () => {
               <button 
                 key={item}
                 onClick={() => scrollToSection(item)} 
-                className="text-white hover:text-primary/80 transition-colors font-medium"
+                className="text-[#8E9196] hover:text-white transition-colors font-medium relative group"
               >
                 {item.charAt(0).toUpperCase() + item.slice(1)}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#9b87f5] to-[#D6BCFA] transition-all group-hover:w-full" />
               </button>
             ))}
           </nav>
@@ -40,7 +41,7 @@ export const Header = () => {
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden text-white hover:text-primary/80"
+            className="md:hidden text-white hover:text-[#9b87f5]"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -48,13 +49,13 @@ export const Header = () => {
         </div>
 
         {isMenuOpen && (
-          <div className="md:hidden absolute top-16 left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-white/10">
+          <div className="md:hidden absolute top-20 left-0 right-0 glass-effect border-t border-white/10">
             <nav className="container mx-auto px-4 py-4 flex flex-col space-y-4">
               {['community', 'events', 'st33', 'opportunities', 'contact'].map((item) => (
                 <button 
                   key={item}
                   onClick={() => scrollToSection(item)} 
-                  className="text-white hover:text-primary/80 transition-colors font-medium text-left py-2"
+                  className="text-[#8E9196] hover:text-white transition-colors font-medium text-left py-2"
                 >
                   {item.charAt(0).toUpperCase() + item.slice(1)}
                 </button>
