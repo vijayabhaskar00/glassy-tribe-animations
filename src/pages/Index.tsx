@@ -1,16 +1,15 @@
 import { lazy, Suspense } from 'react';
 import { Header } from "@/components/Header";
 import { HeroSection } from "@/components/HeroSection";
-import { FeaturesGrid } from "@/components/FeaturesGrid";
 import { Statistics } from "@/components/Statistics";
 import { CommunitySection } from "@/components/CommunitySection";
 import { EventsSection } from "@/components/EventsSection";
 import { St33Section } from "@/components/St33Section";
 import { OpportunitiesSection } from "@/components/OpportunitiesSection";
-import { AppShowcase } from "@/components/AppShowcase";
-import { CollaborativeSpace } from "@/components/CollaborativeSpace";
-import { ContactForm } from "@/components/ContactForm";
-import { Footer } from "@/components/Footer";
+import { FeaturedTribes } from "@/components/FeaturedTribes";
+import { InternshipsSection } from "@/components/InternshipsSection";
+import { Testimonials } from "@/components/Testimonials";
+import { MentorsSection } from "@/components/MentorsSection";
 
 const Index = () => {
   return (
@@ -23,7 +22,7 @@ const Index = () => {
         </section>
 
         <section className="bg-primary">
-          <FeaturesGrid />
+          <Statistics />
         </section>
 
         <section className="bg-secondary" id="community">
@@ -35,7 +34,7 @@ const Index = () => {
         </section>
 
         <section className="bg-secondary">
-          <Statistics />
+          <FeaturedTribes />
         </section>
 
         <section className="bg-primary" id="st33">
@@ -47,19 +46,17 @@ const Index = () => {
         </section>
 
         <section className="bg-primary">
-          <AppShowcase />
+          <InternshipsSection />
         </section>
 
         <section className="bg-secondary">
-          <CollaborativeSpace />
+          <Testimonials />
         </section>
 
-        <section className="bg-primary" id="contact">
-          <ContactForm />
+        <section className="bg-primary">
+          <MentorsSection />
         </section>
       </main>
-
-      <Footer />
     </div>
   );
 };
