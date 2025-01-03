@@ -16,15 +16,13 @@ const Footer = lazy(() => import("@/components/Footer").then(module => ({ defaul
 const Index = () => {
   return (
     <div className="min-h-screen bg-[#000000e6] text-white overflow-hidden pt-16 relative">
-      {/* Solid background overlay */}
       <div className="absolute inset-0 bg-[#000000e6]" />
       
-      {/* Content sections with alternating brand colors */}
       <Header />
       <div className="relative bg-[#000000e6]">
         <HeroSection />
       </div>
-      <div className="relative bg-[#ea384c]">
+      <div className="relative bg-primary">
         <FeaturesGrid />
       </div>
       <div className="relative bg-[#000000e6]">
@@ -32,25 +30,25 @@ const Index = () => {
       </div>
       
       <Suspense fallback={<div className="h-96 flex items-center justify-center">Loading...</div>}>
-        <div id="community" className="relative bg-[#ea384c]">
+        <div id="community" className="relative bg-primary">
           <CommunitySection />
         </div>
         <div id="events" className="relative bg-[#000000e6]">
           <EventsSection />
         </div>
-        <div id="st33" className="relative bg-[#ea384c]">
+        <div id="st33" className="relative bg-primary">
           <St33Section />
         </div>
         <div id="opportunities" className="relative bg-[#000000e6]">
           <OpportunitiesSection />
         </div>
-        <div id="showcase" className="relative bg-[#ea384c]">
+        <div id="showcase" className="relative bg-primary">
           <AppShowcase />
         </div>
         <div id="collaborative" className="relative bg-[#000000e6]">
           <CollaborativeSpace />
         </div>
-        <div id="contact" className="relative bg-[#ea384c]">
+        <div id="contact" className="relative bg-primary">
           <ContactForm />
         </div>
         <Footer />
