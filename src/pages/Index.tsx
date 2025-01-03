@@ -3,56 +3,63 @@ import { Header } from "@/components/Header";
 import { HeroSection } from "@/components/HeroSection";
 import { FeaturesGrid } from "@/components/FeaturesGrid";
 import { Statistics } from "@/components/Statistics";
-
-const CommunitySection = lazy(() => import("@/components/CommunitySection").then(module => ({ default: module.CommunitySection })));
-const EventsSection = lazy(() => import("@/components/EventsSection").then(module => ({ default: module.EventsSection })));
-const St33Section = lazy(() => import("@/components/St33Section").then(module => ({ default: module.St33Section })));
-const OpportunitiesSection = lazy(() => import("@/components/OpportunitiesSection").then(module => ({ default: module.OpportunitiesSection })));
-const AppShowcase = lazy(() => import("@/components/AppShowcase").then(module => ({ default: module.AppShowcase })));
-const CollaborativeSpace = lazy(() => import("@/components/CollaborativeSpace").then(module => ({ default: module.CollaborativeSpace })));
-const ContactForm = lazy(() => import("@/components/ContactForm").then(module => ({ default: module.ContactForm })));
-const Footer = lazy(() => import("@/components/Footer").then(module => ({ default: module.Footer })));
+import { CommunitySection } from "@/components/CommunitySection";
+import { EventsSection } from "@/components/EventsSection";
+import { St33Section } from "@/components/St33Section";
+import { OpportunitiesSection } from "@/components/OpportunitiesSection";
+import { AppShowcase } from "@/components/AppShowcase";
+import { CollaborativeSpace } from "@/components/CollaborativeSpace";
+import { ContactForm } from "@/components/ContactForm";
+import { Footer } from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-secondary text-white overflow-hidden pt-16 relative">
-      <div className="absolute inset-0 bg-secondary" />
-      
+    <div className="min-h-screen bg-secondary text-white">
       <Header />
-      <div className="relative bg-secondary">
-        <HeroSection />
-      </div>
-      <div className="relative bg-primary">
-        <FeaturesGrid />
-      </div>
-      <div className="relative bg-secondary">
-        <Statistics />
-      </div>
       
-      <Suspense fallback={<div className="h-96 flex items-center justify-center">Loading...</div>}>
-        <div id="community" className="relative bg-primary">
+      <main className="relative">
+        <section className="bg-secondary">
+          <HeroSection />
+        </section>
+
+        <section className="bg-primary">
+          <FeaturesGrid />
+        </section>
+
+        <section className="bg-secondary" id="community">
           <CommunitySection />
-        </div>
-        <div id="events" className="relative bg-secondary">
+        </section>
+
+        <section className="bg-primary" id="events">
           <EventsSection />
-        </div>
-        <div id="st33" className="relative bg-primary">
+        </section>
+
+        <section className="bg-secondary">
+          <Statistics />
+        </section>
+
+        <section className="bg-primary" id="st33">
           <St33Section />
-        </div>
-        <div id="opportunities" className="relative bg-secondary">
+        </section>
+
+        <section className="bg-secondary" id="opportunities">
           <OpportunitiesSection />
-        </div>
-        <div id="showcase" className="relative bg-primary">
+        </section>
+
+        <section className="bg-primary">
           <AppShowcase />
-        </div>
-        <div id="collaborative" className="relative bg-secondary">
+        </section>
+
+        <section className="bg-secondary">
           <CollaborativeSpace />
-        </div>
-        <div id="contact" className="relative bg-primary">
+        </section>
+
+        <section className="bg-primary" id="contact">
           <ContactForm />
-        </div>
-        <Footer />
-      </Suspense>
+        </section>
+      </main>
+
+      <Footer />
     </div>
   );
 };
