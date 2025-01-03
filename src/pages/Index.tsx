@@ -15,17 +15,17 @@ const Footer = lazy(() => import("@/components/Footer").then(module => ({ defaul
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-[#000000e6] text-white overflow-hidden pt-16 relative">
-      <div className="absolute inset-0 bg-[#000000e6]" />
+    <div className="min-h-screen bg-secondary text-white overflow-hidden pt-16 relative">
+      <div className="absolute inset-0 bg-secondary" />
       
       <Header />
-      <div className="relative bg-[#000000e6]">
+      <div className="relative bg-secondary">
         <HeroSection />
       </div>
       <div className="relative bg-primary">
         <FeaturesGrid />
       </div>
-      <div className="relative bg-[#000000e6]">
+      <div className="relative bg-secondary">
         <Statistics />
       </div>
       
@@ -33,19 +33,19 @@ const Index = () => {
         <div id="community" className="relative bg-primary">
           <CommunitySection />
         </div>
-        <div id="events" className="relative bg-[#000000e6]">
+        <div id="events" className="relative bg-secondary">
           <EventsSection />
         </div>
         <div id="st33" className="relative bg-primary">
           <St33Section />
         </div>
-        <div id="opportunities" className="relative bg-[#000000e6]">
+        <div id="opportunities" className="relative bg-secondary">
           <OpportunitiesSection />
         </div>
         <div id="showcase" className="relative bg-primary">
           <AppShowcase />
         </div>
-        <div id="collaborative" className="relative bg-[#000000e6]">
+        <div id="collaborative" className="relative bg-secondary">
           <CollaborativeSpace />
         </div>
         <div id="contact" className="relative bg-primary">
